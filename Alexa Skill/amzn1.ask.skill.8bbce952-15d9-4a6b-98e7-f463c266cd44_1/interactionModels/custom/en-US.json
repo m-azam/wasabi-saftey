@@ -1,0 +1,152 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "wasabi app",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "DomesticIntent",
+          "slots": [
+            {
+              "name": "Genre",
+              "type": "Genre",
+              "samples": [
+                "I would like to listen to some {Genre}",
+                "{Genre}",
+                "Play {Genre}"
+              ]
+            }
+          ],
+          "samples": [
+            "Play some {Genre}",
+            "Play a {Genre} song",
+            "Play some tunes",
+            "Play some music",
+            "Play a song"
+          ]
+        },
+        {
+          "name": "CreateContanctIntent",
+          "slots": [],
+          "samples": [
+            "create a contact"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "DirectIntent",
+          "slots": [],
+          "samples": [
+            "in need of help",
+            "get some help",
+            "call for help",
+            "help"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "jazz"
+              }
+            },
+            {
+              "name": {
+                "value": "pop"
+              }
+            },
+            {
+              "name": {
+                "value": "rock"
+              }
+            }
+          ],
+          "name": "Genre"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "DomesticIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Genre",
+              "type": "Genre",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.260785835529.1002838453035"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.260785835529.1002838453035",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sure, What type?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Sure, What genre?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What type of music would you like to listen to?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "9"
+}
